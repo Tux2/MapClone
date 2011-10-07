@@ -1,0 +1,52 @@
+name: MapClone
+main: tux2.MapClone.MapClone
+version: 0.5
+commands:
+   mclone:
+      description: Clones the map number to the one in your hand.
+      usage: |
+       /mclone <map number>
+   mzoom:
+      description: Scales the map you have in your hand.
+      usage: |
+       /mzoom <1-5|closest|close|normal|far|farthest>
+       
+# SuperPerms data
+permissions:
+    mapclone.*:
+        default: op
+        description: Gives access to all cloning commands and abilities
+        children:
+            mapclone.clone: true
+            mapclone.any: true
+            mapclone.free: true
+            mapclone.all: true
+    mapclone.clone:
+        description: Allows you to clone maps.
+        default: not_op
+        command: "/mclone <mapnumber>"
+    mapclone.any:
+        description: Allows you to clone any map number, not just the ones in your inventory.
+        default: op
+    mapclone.free:
+        description: Exempts this group from having to pay to clone a map if an enconomy system is enabled.
+        default: op
+    mapscale.*:
+        default: op
+        description: Gives access to all scaling commands and abilities
+        children:
+            mapscale.scale: true
+            mapscale.any: true
+            mapscale.free: true
+            mapscale.all: true
+    mapscale.scale:
+        description: Allows you to scale maps.
+        default: not_op
+        command: "/mzoom <1-5|closest|close|normal|far|farthest|in|out>"
+    mapscale.any:
+        description: Allows you to scale any map number, even if it has already been scaled before.
+        default: op
+        command: "/mzoom <1-5|farthest|far|normal|close|closest> <mapnumber>"
+    mapscale.free:
+        description: Exempts this group from having to pay to scale a map if an enconomy system is enabled.
+        default: op

@@ -1,8 +1,0 @@
-name: MapClone
-main: tux2.MapClone.MapClone
-version: 0.4
-commands:
-   mclone:
-      description: Clones the map number to the one in your hand.
-      usage: |
-       /mclone <map number>
